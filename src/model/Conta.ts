@@ -1,6 +1,6 @@
 ﻿export class Conta{
 
-    // Atributos do Objeto da Classe Conta
+    // Atributos da Classe Conta
     private _numero: number;
     private _agencia: number;
     private _tipo: number;
@@ -15,6 +15,9 @@
 		this._titular = _titular;
 		this._saldo = _saldo;
 	}
+
+    // Métodos Get e Set - Responsáveis por recuperar (get) e 
+    // alterar (set) os dados dos atributos
 
     /**
      * Getter _numero
@@ -96,6 +99,7 @@
 		this._saldo = value;
 	}
 
+    // Método Sacar
     public sacar(valor: number): boolean{
         
         if(this._saldo >= valor){
@@ -103,11 +107,12 @@
             return true;
         }
 
-        console.log("Saldo é insuficiente!");
+        console.log("\nSaldo insuficiente!");
         return false;
 
     }
 
+    // Método Depositar
     public depositar(valor: number): void{
         this.set_saldo(this._saldo + valor);
     }
@@ -125,7 +130,7 @@
                 break;
         }
 
-        console.log("*****************************************************");
+        console.log("\n*****************************************************");
         console.log("Dados da Conta");
         console.log("*****************************************************");
         console.log(`Número da conta: ${this._numero}`);
