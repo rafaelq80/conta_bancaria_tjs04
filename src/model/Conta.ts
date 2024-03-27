@@ -20,90 +20,91 @@
     // alterar (set) os dados dos atributos
 
     /**
-     * Getter _numero
+     * Getter numero
      * @return {number}
      */
-	public get_numero(): number {
+	public get numero(): number {
 		return this._numero;
 	}
 
     /**
-     * Getter _agencia
+     * Getter agencia
      * @return {number}
      */
-	public get_agencia(): number {
+	public get agencia(): number {
 		return this._agencia;
 	}
 
     /**
-     * Getter _tipo
+     * Getter tipo
      * @return {number}
      */
-	public get_tipo(): number {
+	public get tipo(): number {
 		return this._tipo;
 	}
 
     /**
-     * Getter _titular
+     * Getter titular
      * @return {string}
      */
-	public get_titular(): string {
+	public get titular(): string {
 		return this._titular;
 	}
 
     /**
-     * Getter _saldo
+     * Getter saldo
      * @return {number}
      */
-	public get_saldo(): number {
+	public get saldo(): number {
 		return this._saldo;
 	}
 
     /**
-     * Setter _numero
+     * Setter numero
      * @param {number} value
      */
-	public set_numero(value: number) {
+	public set numero(value: number) {
 		this._numero = value;
 	}
 
     /**
-     * Setter _agencia
+     * Setter agencia
      * @param {number} value
      */
-	public set_agencia(value: number) {
+	public set agencia(value: number) {
 		this._agencia = value;
 	}
 
     /**
-     * Setter _tipo
+     * Setter tipo
      * @param {number} value
      */
-	public set_tipo(value: number) {
+	public set tipo(value: number) {
 		this._tipo = value;
 	}
 
     /**
-     * Setter _titular
+     * Setter titular
      * @param {string} value
      */
-	public set_titular(value: string) {
+	public set titular(value: string) {
 		this._titular = value;
 	}
 
     /**
-     * Setter _saldo
+     * Setter saldo
      * @param {number} value
      */
-	public set_saldo(value: number) {
+	public set saldo(value: number) {
 		this._saldo = value;
 	}
+   
 
     // Método Sacar
     public sacar(valor: number): boolean{
         
         if(this._saldo >= valor){
-            this.set_saldo(this._saldo - valor);
+            this._saldo = this._saldo - valor; // Mudar
             return true;
         }
 
@@ -114,7 +115,7 @@
 
     // Método Depositar
     public depositar(valor: number): void{
-        this.set_saldo(this._saldo + valor);
+        this._saldo = this._saldo + valor; // Mudar
     }
 
     public visualizar(): void{

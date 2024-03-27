@@ -1,6 +1,8 @@
 ﻿import readlinesync = require("readline-sync");
 import { colors } from "./src/util/Cores";
 import { Conta } from "./src/model/Conta";
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupanca";
 
 export function main() {
 
@@ -15,10 +17,10 @@ export function main() {
 
     // Modificando o Saldo através do método set
     console.log("\nAlterar o Saldo para R$ 1500000.00")
-    c1.set_saldo(1500000);
+    c1.saldo = 1500000;
 
     // Recuperando o valor do Saldo através do método get
-    console.log(`\nNovo Saldo da Conta: ${c1.get_saldo()}`);
+    console.log(`\nNovo Saldo da Conta: ${c1.saldo}`);
 
     // Verificando se o Saque deu certo
     console.log(`\nSacar R$ 2000000.00 da conta: ${c1.sacar(2000000)}`);
@@ -32,6 +34,27 @@ export function main() {
     console.log("\nDepositar R$ 5000.00 na Conta: ");
     c1.depositar(5000);
     c1.visualizar();
+
+    // Teste da Classe Conta Corrente
+
+    const cc1: ContaCorrente = new ContaCorrente(2, 456, 1, "Yasmine Lamark", 500000, 1000);
+    cc1.visualizar();
+
+    cc1.sacar(1000);
+
+    cc1.visualizar();
+
+    cc1.depositar(5000);
+
+    cc1.visualizar();
+
+    // Teste da Classe ContaPoupanca
+    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, "Victor", 1000, 10);
+    contapoupanca.visualizar();
+    contapoupanca.sacar(200);
+    contapoupanca.visualizar();
+    contapoupanca.depositar(1000);
+    contapoupanca.visualizar();
 
     while (true) {
 
