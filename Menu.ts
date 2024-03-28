@@ -8,32 +8,32 @@ export function main() {
 
     let opcao: number;
 
-    // Instanciando um novo Objeto da Classe Conta
-    console.log("\nCriar o Objeto da Classe Conta")
-    let c1: Conta = new Conta(1, 123, 1, "Natasha", 1000000);
+    // // Instanciando um novo Objeto da Classe Conta
+    // console.log("\nCriar o Objeto da Classe Conta")
+    // let c1: Conta = new Conta(1, 123, 1, "Natasha", 1000000);
 
-    // Visualizando todos os dados da conta criada
-    c1.visualizar();
+    // // Visualizando todos os dados da conta criada
+    // c1.visualizar();
 
-    // Modificando o Saldo através do método set
-    console.log("\nAlterar o Saldo para R$ 1500000.00")
-    c1.saldo = 1500000;
+    // // Modificando o Saldo através do método set
+    // console.log("\nAlterar o Saldo para R$ 1500000.00")
+    // c1.saldo = 1500000;
 
-    // Recuperando o valor do Saldo através do método get
-    console.log(`\nNovo Saldo da Conta: ${c1.saldo}`);
+    // // Recuperando o valor do Saldo através do método get
+    // console.log(`\nNovo Saldo da Conta: ${c1.saldo}`);
 
-    // Verificando se o Saque deu certo
-    console.log(`\nSacar R$ 2000000.00 da conta: ${c1.sacar(2000000)}`);
-    c1.visualizar();
+    // // Verificando se o Saque deu certo
+    // console.log(`\nSacar R$ 2000000.00 da conta: ${c1.sacar(2000000)}`);
+    // c1.visualizar();
 
-    // Verificando se o Saque deu certo
-    console.log(`\nSacar R$ 2000.00 da conta: ${c1.sacar(2000)}`);
-    c1.visualizar();
+    // // Verificando se o Saque deu certo
+    // console.log(`\nSacar R$ 2000.00 da conta: ${c1.sacar(2000)}`);
+    // c1.visualizar();
 
-    // Depositar dinheiro na conta
-    console.log("\nDepositar R$ 5000.00 na Conta: ");
-    c1.depositar(5000);
-    c1.visualizar();
+    // // Depositar dinheiro na conta
+    // console.log("\nDepositar R$ 5000.00 na Conta: ");
+    // c1.depositar(5000);
+    // c1.visualizar();
 
     // Teste da Classe Conta Corrente
 
