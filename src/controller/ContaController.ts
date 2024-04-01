@@ -12,7 +12,12 @@ export class ContaController implements ContaRepository{
     public numero: number = 0;
 
     procurarPorNumero(numero: number): void {
-        throw new Error("Method not implemented.");
+        let buscaConta = this.buscarNoArray(numero);
+
+        if(buscaConta !== null)
+            buscaConta.visualizar()
+        else
+            console.log("\nConta não foi Encontrada!")
     }
 
     // Método para Listar os dados de todas as Contas
@@ -32,11 +37,23 @@ export class ContaController implements ContaRepository{
     }
 
     atualizar(conta: Conta): void {
-        throw new Error("Method not implemented.");
+        let buscaConta = this.buscarNoArray(conta.numero);
+
+        if(buscaConta !== null){
+            this.listaContas[this.listaContas.indexOf(buscaConta)] = conta;
+            console.log(`A Conta número ${conta.numero} foi Atualizada com êxito!`)
+        }else
+            console.log("\nConta não foi Encontrada!")
     }
 
     deletar(numero: number): void {
-        throw new Error("Method not implemented.");
+        let buscaConta = this.buscarNoArray(numero);
+
+        if(buscaConta !== null){
+            this.listaContas.splice(this.listaContas.indexOf(buscaConta), 1)
+            console.log(`A Conta número ${numero} foi Excluída com êxito!`)
+        }else
+            console.log("\nConta não foi Encontrada!")
     }
 
     sacar(numero: number, valor: number): void {
@@ -50,5 +67,19 @@ export class ContaController implements ContaRepository{
     transferir(numeroOrigem: number, numeroDestino: number, valor: number): void {
         throw new Error("Method not implemented.");
     }
+
+    // Métodos Auxiliares
+
+    public gerarNumero(): number{
+        return ++ this.numero
+    }
     
+    public buscarNoArray(numero: number): Conta | null{
+        for (let conta of this.listaContas){
+            if (conta.numero === numero)
+                return conta;
+       }
+
+       return null;
+    }
 }
