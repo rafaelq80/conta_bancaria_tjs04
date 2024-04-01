@@ -11,6 +11,8 @@ export class ContaController implements ContaRepository{
     // contas
     public numero: number = 0;
 
+    // Método para Listar os dados de uma Conta
+    // inseridas na Collection listaContas
     procurarPorNumero(numero: number): void {
         let buscaConta = this.buscarNoArray(numero);
 
@@ -28,7 +30,7 @@ export class ContaController implements ContaRepository{
        }
     }
 
-     // Método para adicionar Objrtos das Classes 
+     // Método para adicionar Objetos das Classes 
      // ContaCorrente e ContaPoupanca
     // na Collection listaContas
     cadastrar(conta: Conta): void {
@@ -36,6 +38,8 @@ export class ContaController implements ContaRepository{
         console.log("A Conta foi adicionada!")
     }
 
+    // Método para atualizar os dados de uma Conta
+    // inseridas na Collection listaContas
     atualizar(conta: Conta): void {
         let buscaConta = this.buscarNoArray(conta.numero);
 
@@ -46,6 +50,8 @@ export class ContaController implements ContaRepository{
             console.log("\nConta não foi Encontrada!")
     }
 
+    // Método para deletar uma Conta
+    // inseridas na Collection listaContas
     deletar(numero: number): void {
         let buscaConta = this.buscarNoArray(numero);
 
@@ -70,10 +76,12 @@ export class ContaController implements ContaRepository{
 
     // Métodos Auxiliares
 
+    // Método para gerar um número para uma nova conta
     public gerarNumero(): number{
         return ++ this.numero
     }
     
+    // Método para procurar uma conta pelo numero
     public buscarNoArray(numero: number): Conta | null{
         for (let conta of this.listaContas){
             if (conta.numero === numero)
